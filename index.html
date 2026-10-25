@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>VibeAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+        </span>
+        <span class="brand-name">VibeAI</span>
+      </div>
+      <div class="topbar-right">
+        <div id="status" class="status status-checking" title="Model status" role="status">
+          <span class="dot"></span><span id="statusText">Checking…</span>
+        </div>
+        <button id="newChat" class="btn btn-ghost" type="button">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="btn-label">New chat</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="scroller" class="scroller">
+      <div id="messages" class="messages" aria-live="polite">
+        <section id="welcome" class="welcome">
+          <h1>What's the vibe today?</h1>
+          <p>Ask anything. Every reply is written live by a real AI language model, not from a list of prepared answers.</p>
+          <div class="chips" id="chips"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="composer-wrap">
+      <form id="composer" class="composer" autocomplete="off">
+        <textarea id="input" rows="1" maxlength="2000" placeholder="Message VibeAI" aria-label="Message"></textarea>
+        <button id="sendBtn" class="send" type="submit" aria-label="Send message">
+          <svg viewBox="0 0 24 24" class="icon"><path d="m5 12 7-7 7 7M12 19V5"/></svg>
+        </button>
+        <button id="stopBtn" class="send stop" type="button" aria-label="Stop generating" hidden>
+          <svg viewBox="0 0 24 24" class="icon"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+        </button>
+      </form>
+      <p class="hint">AI can make mistakes. Check anything important.</p>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
